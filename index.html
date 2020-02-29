@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <!--configuracoes do head da pagina-->
+    <title>Doe vida!</title>
+    <!-- desafio: colocar um icone também, posteriormente-->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+    <header>
+        <img src="logo.png" alt="Imagem de DOE" class="logo">
+        <h2>A sua doação importa!</h2>
+        <p>Três vidas podem ser salvas com sua doação!</p>
+        <p>Precisamos de mais de 40.000 doações todos os dias.</p>
+        <p>Apenas 2% da população brasileira doa sangue.</p>
+        <button>QUERO AJUDAR!</button>
+    </header>
+
+    <section class="form hide">
+        <h2>Entre na lista de doadores!</h2>
+        <form action="/" method="POST">
+            <input type="text" name="name" placeholder="Nome completo">
+            <input type="text" name="email" placeholder="Email">
+            <input type="text" name="blood" placeholder="Tipo sanguíneo">
+            <button>Quero ajudar!</button>
+        </form>
+    </section>
+
+    <main>
+        <h2>Últimos <span>doadores</span></h2>
+
+        <section class="donors">
+
+            {% for donor in donors %}            
+
+            <div class="donor">
+                <div class="blood">{{donor.blood}}</div>
+                <p>{{donor.name}}</p>
+            </div>
+
+           {%endfor%}
+
+        </section>
+    </main>
+
+    <footer>Com ♥ Breno Oliveira :~)</footer>
+
+    <script src="script.js">
+
+    </script>
+</body>
+
+</html>
